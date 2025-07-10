@@ -9,7 +9,7 @@ import {
   Mail,
   ExternalLink,
 } from "lucide-react";
-
+import Link from "next/link";
 export default function Home() {
   const skills = [
     { name: "React", level: 85 },
@@ -23,9 +23,8 @@ export default function Home() {
   const projects = [
     {
       title: "ZenTrio",
-      description: "Manange task in one place",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+      description: "Manange task in one place. ZenTrio no stress for your teams!",
+      image: "/zentrioProject.png",
       tags: ["React", "Sring boot", "PostgreSQL"],
       link: "https://kshrd.zentrio.pro/",
     },
@@ -68,7 +67,11 @@ export default function Home() {
               {/* Social Links */}
               <div className="flex gap-4 pt-4">
                 {[
-                  { icon: Github, href: "https://github.com/Gemini210504", label: "GitHub" },
+                  {
+                    icon: Github,
+                    href: "https://github.com/Gemini210504",
+                    label: "GitHub",
+                  },
                   { icon: Linkedin, href: "#", label: "LinkedIn" },
                   { icon: Mail, href: "#", label: "Email" },
                 ].map((social, index) => (
@@ -218,7 +221,13 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink className="w-6 h-6 text-white" />
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="w-6 h-6 text-white" />
+                    </Link>
                   </div>
                 </div>
                 <div className="p-6">
@@ -254,10 +263,16 @@ export default function Home() {
               Let's create something amazing together. I'm always excited to
               take on new challenges and bring innovative ideas to life.
             </p>
-            <button className="group bg-gray-800 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 mx-auto">
-              Get In Touch
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <Link
+              href="https://www.facebook.com/leap.leap.182940"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="group bg-gray-800 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 mx-auto">
+                Get In Touch
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
           </div>
         </div>
       </section>

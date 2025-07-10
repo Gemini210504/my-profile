@@ -101,12 +101,7 @@ export default function ProfileComponent() {
       year: "2023",
       icon: "⚛️",
     },
-    {
-      name: "Kubernetes Administrator",
-      issuer: "CNCF",
-      year: "2022",
-      icon: "🚢",
-    },
+  
   ];
 
   const interests = [
@@ -168,7 +163,7 @@ export default function ProfileComponent() {
       <div className="max-w-full mx-auto flex flex-col lg:flex-row p-4">
         {/* Sidebar */}
         <div className="w-full lg:w-[30%] lg:h-screen lg:overflow-y-auto scrollbar-hide mb-4 lg:mb-0">
-          <div className="bg-white/60 backdrop-blur-2xl rounded-3xl p-6 shadow-xl border border-white/30">
+          <div className="bg-white/60 backdrop-blur-2xl rounded-3xl p-6  border border-white/30">
             {/* Profile Header */}
             <div className="text-center mb-6">
               <div
@@ -221,7 +216,7 @@ export default function ProfileComponent() {
               <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/40 rounded-xl border border-white/30 hover:bg-white/60 transition-colors">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
                 <span className="text-xs sm:text-sm text-slate-600">
-                  +(855) 979-437-184
+                  097-943-7184
                 </span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/40 rounded-xl border border-white/30 hover:bg-white/60 transition-colors">
