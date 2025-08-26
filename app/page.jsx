@@ -8,6 +8,7 @@ import {
   Linkedin,
   Mail,
   ExternalLink,
+  LucideTableCellsMerge,
 } from "lucide-react";
 import Link from "next/link";
 export default function Home() {
@@ -68,19 +69,34 @@ export default function Home() {
               <div className="flex gap-4 pt-4">
                 {[
                   {
-                    icon: Github,
+                    icon: "https://img.icons8.com/glyph-neue/64/github.png",
                     href: "https://github.com/Gemini210504",
                     label: "GitHub",
                   },
-                  { icon: Linkedin, href: "#", label: "LinkedIn" },
-                  { icon: Mail, href: "#", label: "Email" },
+                  {
+                    icon: "https://img.icons8.com/fluency/48/linkedin.png",
+                    href: "https://www.linkedin.com/feed/",
+                    label: "LinkedIn",
+                  },
+                  {
+                    icon: "https://img.icons8.com/fluency/48/telegram-app.png",
+                    href: "https://t.me/leang_chhengleap",
+                    label: "Telegram",
+                  },
                 ].map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
+                    aria-label={social.label}
                     className="group w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 border"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <social.icon className="w-5 h-5 text-gray-600 group-hover:text-violet-600 transition-colors" />
+                    <img
+                      src={social.icon}
+                      alt={social.label}
+                      className="w-6 h-6 group-hover:scale-110 transition-transform"
+                    />
                   </a>
                 ))}
               </div>
@@ -92,10 +108,10 @@ export default function Home() {
                 <div className="relative rounded-3xl p-8 shadow-2xl border">
                   <div className="w-full h-96 rounded-2xl overflow-hidden">
                     <img
-                      src="https://i.pinimg.com/736x/62/08/c2/6208c2bf8e8714b92068ed1edf38c295.jpg"
+                      src="/chhengleap.jpg"
                       alt="Gemini Ling"
                       width={400}
-                      height={400}
+                      height={500}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
@@ -264,7 +280,7 @@ export default function Home() {
               take on new challenges and bring innovative ideas to life.
             </p>
             <Link
-              href="https://www.facebook.com/leap.leap.182940"
+              href="https://www.facebook.com/leap.leap.18294"
               target="_blank"
               rel="noopener noreferrer"
             >

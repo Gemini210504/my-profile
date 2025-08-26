@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Gemini Ling",
+  title: "Leang Chhengleap",
   description: "Let's know more about me",
 };
 

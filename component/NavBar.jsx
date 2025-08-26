@@ -21,18 +21,9 @@ export default function NavBarComponent() {
       <nav className="max-w-full mx-auto px-6 py-4 flex items-center justify-between gap-4 md:gap-8">
         {/* Left: Logo */}
         <div className="flex items-center gap-4 group">
-          <div className="relative">
-            <div className="w-12 h-12 bg-gradient-to-br from-violet-500 via-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-105 transition duration-300">
-              <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
-              <span className="text-white font-bold text-xl relative z-10">
-                L
-              </span>
-            </div>
-            <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full animate-pulse"></div>
-          </div>
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-br from-violet-800 via-purple-700 to-indigo-800 bg-clip-text text-transparent">
-             Leang Chhengleap
+              Leang Chhengleap
             </h1>
             <p className="text-sm text-violet-700 font-medium tracking-wide">
               Web Developer
@@ -74,7 +65,7 @@ export default function NavBarComponent() {
           {/* Profile Avatar */}
           <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md hover:shadow-xl transition-all duration-300">
             <img
-              src="https://i.pinimg.com/736x/62/08/c2/6208c2bf8e8714b92068ed1edf38c295.jpg"
+              src="/chhengleap.jpg"
               alt="me"
               className="w-full h-full object-cover"
             />

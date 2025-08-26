@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import {
-  Calendar,
-  MapPin,
   Award,
   Code,
   Briefcase,
@@ -14,31 +12,59 @@ import {
   Gamepad2,
   Book,
   Star,
-  ExternalLink,
-  Github,
-  Linkedin,
-  Mail,
-  Phone,
-  Download,
-  Play,
-  Pause,
-  ChevronRight,
   Target,
-  Zap,
-  Users,
-  Trophy,
-  MessageCircle,
   Globe,
-  Sparkles,
-  Rocket,
-  Brain,
   Lightbulb,
   Code2,
 } from "lucide-react";
+import { Mail, Phone, Calendar, MapPin, User, Sparkles } from "lucide-react";
 
 export default function ProfileComponent() {
   const [activeTab, setActiveTab] = useState("overview");
   const [isHovered, setIsHovered] = useState(false);
+
+  const contactItems = [
+    {
+      icon: User,
+      label: "Born",
+      value: "May 21, 2004",
+      color: "text-indigo-500",
+      bgColor: "bg-indigo-50",
+      hoverBg: "hover:bg-indigo-100",
+    },
+    {
+      icon: MapPin,
+      label: "Birthplace",
+      value: "Banteay Meanchey, Cambodia",
+      color: "text-emerald-500",
+      bgColor: "bg-emerald-50",
+      hoverBg: "hover:bg-emerald-100",
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: "leangchhengleap073@email.com",
+      color: "text-blue-500",
+      bgColor: "bg-blue-50",
+      hoverBg: "hover:bg-blue-100",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+855 97 943 7184",
+      color: "text-green-500",
+      bgColor: "bg-green-50",
+      hoverBg: "hover:bg-green-100",
+    },
+    {
+      icon: Sparkles,
+      label: "Status",
+      value: "Available for opportunities",
+      color: "text-purple-500",
+      bgColor: "bg-purple-50",
+      hoverBg: "hover:bg-purple-100",
+    },
+  ];
 
   const experience = [
     {
@@ -61,11 +87,9 @@ export default function ProfileComponent() {
     {
       degree: "Bachelor of Science in Computer Science",
       institution: "Royal University of Phnom Penh",
-      period: "2021 - Present",
+      period: "2023 - Present",
       gpa: "3.65",
-      achievements: [
-        
-      ],
+      achievements: [],
     },
     {
       degree: "High School Diploma",
@@ -75,12 +99,10 @@ export default function ProfileComponent() {
       achievements: [
         "Top 10 student in class",
         "Science major",
-        "English Debate Team member",
+      
       ],
     },
   ];
-  
-  
 
   const certifications = [
     {
@@ -101,7 +123,6 @@ export default function ProfileComponent() {
       year: "2023",
       icon: "⚛️",
     },
-  
   ];
 
   const interests = [
@@ -173,8 +194,8 @@ export default function ProfileComponent() {
               >
                 <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-100 via-purple-100 bob-100 to-pink-100 rounded-full overflow-hidden shadow-2xl border-4 border-white/60 relative mx-auto">
                   <img
-                    src="https://i.pinimg.com/736x/62/08/c2/6208c2bf8e8714b92068ed1edf38c295.jpg"
-                    alt="Gemini Ling"
+                    src="/chhengleap.jpg"
+                    alt="chhengleap"
                     className={`w-full h-full object-cover transition-transform duration-700 ${
                       isHovered ? "scale-110" : "scale-100"
                     }`}
@@ -206,24 +227,49 @@ export default function ProfileComponent() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-              <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/40 rounded-xl border border-white/30 hover:bg-white/60 transition-colors">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
-                <span className="text-xs sm:text-sm text-slate-600">
-                  leangchhengleap073@email.com
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/40 rounded-xl border border-white/30 hover:bg-white/60 transition-colors">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
-                <span className="text-xs sm:text-sm text-slate-600">
-                  097-943-7184
-                </span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/40 rounded-xl border border-white/30 hover:bg-white/60 transition-colors">
-                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
-                <span className="text-xs sm:text-sm text-slate-600">
-                  Available for opportunities
-                </span>
+            <div className="max-w-md mx-auto mb-5">
+              <div className="relative">
+                {contactItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`group relative overflow-hidden rounded-xl border border-white/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg ${item.bgColor} ${item.hoverBg}`}
+                  >
+                    <div className="flex items-center gap-4 p-4">
+                      <div
+                        className={`flex-shrink-0 p-2 rounded-lg bg-white/80 ${item.color} transition-transform duration-300 group-hover:rotate-12`}
+                      >
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-1">
+                          {item.label}
+                        </p>
+                        <p className="text-sm font-semibold text-slate-700 truncate">
+                          {item.value}
+                        </p>
+                      </div>
+                      <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                          className="w-2 h-2 bg-current rounded-full animate-pulse"
+                          style={{
+                            color: item.color
+                              .replace("text-", "")
+                              .replace("-500", ""),
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+
+                    {/* Animated border */}
+                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div
+                        className={`absolute inset-0 rounded-xl bg-gradient-to-r ${item.color
+                          .replace("text-", "from-")
+                          .replace("-500", "-200")} to-transparent opacity-20`}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
